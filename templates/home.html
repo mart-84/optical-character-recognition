@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.0/socket.io.js" crossorigin="anonymous"></script>
+        <script src="static/script.js"></script>
+        <title>OCR IA</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css"> 
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1 class="flex flex-center">Optical Character Recognition OCR</h1>
+        <div id="root">
+            <div id="result" class="none">
+                <div id="result-display"></div>
+                <div id="confirmation-boutons">
+                    Les résultats est-il correct ?
+                    <button onclick="confirmeResultat()">Oui</button>
+                    <button onclick="afficherChamp()">Non</button>
+                    <button onclick="resetPage()">Annuler</button>
+                    <div id="input-lettre-div" class="none">
+                        
+                        <input id="input-lettre" type="text" onkeyup="this.value = this.value.toUpperCase();"/>
+                        <button onclick="infirmeResultat()">Valider</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-center">
+                <div>
+                    <div id="canvas"></div>
+                    <button id="recommencer">Recommencer</button>
+                    <button id="reconnaitre">Reconnaitre</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
